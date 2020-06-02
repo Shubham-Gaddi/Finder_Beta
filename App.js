@@ -54,20 +54,25 @@ const userSchema = new mongoose.Schema(
 });
 const User =new mongoose.model("User", userSchema);
 
-function mailCheck(testMail)
+// User Defined Functions being Used
+async function mailCheck(testMail)
 {
-  emailExistence.check(testMail ,function(err,res)
+  let test = 2;
+  emailExistence.check(testMail,async function(err,res)
   {
-    if(err)
-    {
-      console.log("Invalid Email Address");
-    }
-    else
-    {
-      console.log("Flag 3 Updated");
-    }
-    return 1;
+    let test = await res;
+    // if(res)
+    // {
+    //   console.log("MAIL VERIFIED");
+    //   test = 1;
+    // }
+    // else
+    // {
+    //   console.log("Wrong Email");
+    // }
   });
+  await test;
+  return test;
 }
 
 // GET Request for Root Directory
@@ -89,62 +94,39 @@ app.post("/SignUp.html",function(req,res)
   let Mail = req.body.email;
   let Pass = req.body.passWord;
   let Pass2 = req.body.passWordConf;
-  async function registerUser(pass,pass2,mail)
-  {
-    let flag1 = 0;
-    let flag2 = 0;
-    let flag3 = 0;
-    function mailCheck(testMail)
+  async function verifyUser(pass,pass2,mail)
     {
-      emailExistence.check(testMail ,function(err,res)
-      {
-        if(err)
-        {
-          console.log("Invalid Email Address");
-        }
-        else
-        {
-          console.log("Flag 3 Updated");
-        }
-        return 1;
-      });
-    }
-    flag3 = mailCheck(mail);
-    console.log("flag3"+flag3);
-    if(pass === pass2)
-    {
-      flag1 = 1;
-    }
-    else
-    {
-      console.log("Passwords Do Not Match");
-    }
-    const personalDomains = ["gmail","yahoo","hotmail","msn","rediffmail","ymail"];
-    for(var a = 0 ; a<personalDomains.length ; a++)
-    {
-      if(mail.includes(personalDomains[a]))
+      let flag1 = 0;
+      flag1 = await mailCheck(mail);
+      await flag1;
+      let flag2 = 0;
+      if(pass === pass2)
       {
         flag2 = 1;
-        console.log("Enter a Business Email");
+      }
+      let flag3 = 0;
+      const personalDomains = ["gmail","yahoo","hotmail","msn","rediffmail","ymail"];
+      for(var a = 0 ; a<personalDomains.length ; a++)
+      {
+        if(mail.includes(personalDomains[a]))
+        {
+          flag3 = 1;
+          console.log("Enter a Business Email");
+        }
+      }
+      if((flag1 == 1)&&(flag2 == 1)&&(flag3 ==0))
+      {
+        // user.save();
+        res.render(Main);
+        console.log("Data Successfully Added to Database");
+      }
+      else
+      {
+        console.log("Error in Saving Data");
       }
     }
-    console.log("flag3"+flag3);
-    await flag3;
-    console.log("flag3"+flag3);
-    console.log("All Checks Passed");
-    console.log(flag1 , flag2 , flag3);
-    if((flag1 === 1)&&(flag2 === 0)&&(flag3 === 1))
-    {
-      user.save();
-      res.redirect(__dirname + "/Main.html");
-      console.log("Data Successfully Added to Database");
-      // console.log(flag1, flag2, First, Last, Company, Mail, Pass, Pass2);
-    }
-    else
-    {
-      console.log("Check Data Again");
-    }
-}
+    verifyUser(Pass,Pass2,Mail);
+});
 
 // Setting Up Local Server
 app.listen(3000,function()
