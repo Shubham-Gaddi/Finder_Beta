@@ -1,0 +1,71 @@
+/*                                   Navigation Bar                                             */
+a
+{
+  color : #58b4ae;
+}
+
+a:hover, a:active, a:focus
+{
+  color : grey;
+}
+
+a:visited
+{
+  color: #58b4ae;
+}
+
+h1
+{
+    color: #00a1ab;
+}
+
+body
+{
+  background-color: #DDDDDD;
+}
+
+.NavHead
+{
+  display : inline-block;
+  margin-left: 1%;
+  position: absolute;
+  top: 17%;
+}
+
+.navbarLeft
+{
+  margin-left: 10%;
+}
+
+.navbarRight
+{
+  margin-right: 10%;
+}
+
+/*                                             Main Body                                        */
+h3
+{
+    color: #00a1ab;
+}
+
+h4
+{
+  display: inline-block;
+  color: white;
+  position: absolute;
+  right: 18%;
+  top: 35%;
+}
+
+.MainBody
+{
+  text-align: center;
+}
+
+label
+{
+  font-family: 'Montserrat', sans-serif;
+  color: #00a1ab;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
