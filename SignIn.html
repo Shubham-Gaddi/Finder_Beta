@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign In • Finder</title>
+    <link rel="icon" href="Favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Sign.css">
+  </head>
+
+  <body>
+
+<!--                                   Navigation Bar                                          -->
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand navbarLeft" href = "/"><img src="MagGlass.png" alt="">
+      <h1 class = "Jumbotron NavHead">Finder</h1></a>
+      <ul class="navbar-nav navbarRight">
+        <li class="nav-item active ml-auto">
+          <h4>Don't Have An Account?</h4>
+          <button class="btn btn-light my-2 my-sm-0" type="submit"><a href="SignUp.html">Sign Up</a></button>
+        </li>
+      </ul>
+    </nav>
+    <br><br><br>
+
+<!--                                       Main Body                                            -->
+    <div class="container MainBody">
+      <h1 class="Jumbotron"><strong><em>Welcome !</em></strong></h1>
+      <h3 class="Jumbotron"> Kindly Login With Your Business e-Mail Address. </h3>
+      <br><br>
+    </div>
+    <div class="container">
+      <form action="/SignIn.html" method="POST">
+        <div class="form-group">
+          <label for="BusinessEmail">Business e-Mail</label>
+          <input type="text" class="form-control" id="BusinessEmail" placeholder="Please Enter Your Business e-Mail Address" name="email">
+        </div>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="password" class="form-control" id="Password" placeholder="Please Enter Your Password" name="pass">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-info btn-lg btn-block">Sign In</button>
+      </form>
+    </div>
+</body>
+</html>

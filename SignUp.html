@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign Up • Finder</title>
+    <link rel="icon" href="Favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Sign.css">
+  </head>
+
+  <body>
+
+<!--                                   Navigation Bar                                          -->
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand navbarLeft" href = "/"><img src="MagGlass.png" alt="">
+      <h1 class = "Jumbotron NavHead">Finder</h1></a>
+      <ul class="navbar-nav navbarRight">
+        <li class="nav-item active ml-auto">
+          <h4>Already Have An Account?</h4>
+          <button class="btn btn-light my-2 my-sm-0" type="submit"><a href="SignIn.html">Sign In</a></button>
+        </li>
+      </ul>
+    </nav>
+    <br><br>
+
+<!--                                       Main Body                                            -->
+    <div class="container MainBody">
+      <h1 class="Jumbotron"><strong><em>Welcome !</em></strong></h1>
+      <h3 class="Jumbotron"> Kindly Sign Up With Your Business e-Mail Address. </h3>
+      <br><br>
+    </div>
+    <div class="container">
+      <form action="/SignUp.html" method="POST">
+        <div class="form-group">
+          <label for="fName">Enter Your First Name</label>
+          <input type="text" class="form-control" id="fName" placeholder="Please Enter Your First Name" name="First">
+        </div>
+        <div class="form-group">
+          <label for="lName">Enter Your Last Name</label>
+          <input type="text" class="form-control" id="lName" placeholder="Please Enter Your Last Name" name="Last">
+        </div>
+        <div class="form-group">
+          <label for="cName">Enter the Name of Your Company/Institution</label>
+          <input type="text" class="form-control" id="cName" placeholder="Please Enter The Name Of Your Company/Institution" name="Company">
+        </div>
+        <div class="form-group">
+          <label for="email">Enter Your Business e-Mail</label>
+          <input type="email" class="form-control" id="email" placeholder="Please Enter The Business e-Mail" name="email">
+        </div>
+        <div class="form-group">
+          <label for="passWord">Enter Your Password</label>
+          <input type="password" class="form-control" id="passWord" placeholder="Please Enter Your Password" name="pass">
+          <small id="emailHelp" class="form-text text-muted">Must Be 6-8 Characters Long & Have At Least 1 Number.</small>
+        </div>
+        <div class="form-group">
+          <label for="passWordConf">Re-Enter Your Password</label>
+          <input type="password" class="form-control" id="passWordConf" placeholder="Please Re-Enter Your Password" name="pass2">
+          <small id="emailHelp" class="form-text text-muted">We'll Never Share Your Password With Anyone.</small>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-info btn-lg btn-block">Sign Up</button>
+      </form>
+      <br>
+    </div>
+  </body>
+</html>
